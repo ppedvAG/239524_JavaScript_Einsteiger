@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objekte</title>
+</head>
+<body>
+    
+    <script>
+
+        // Konstruktor
+        function Auto(Marke, Modell) {
+            this.Marke = Marke;
+            this.Modell = Modell;
+        }
+
+        // Initialisieren des Objektes mit "new"
+        var Golf = new Auto("VW", "Golf VII");
+
+        // Ausgabe vom neuen Objekt
+        document.write("Marke: " + Golf.Marke + "<br>");
+        document.write("Modell: " + Golf.Modell);
+
+        document.write("<br><br>");
+
+        // Anonyme Objekte
+        var ObjVar = {
+            "Wohnort" : "Burghausen",
+            "Staatsangehoerigkeit" :  "Deutsch"
+        }
+
+        // Ausgabe von Anonymen Objekten
+        document.write(ObjVar.Wohnort + "<br>");
+        document.write(ObjVar.Staatsangehoerigkeit);
+
+        document.write("<br><br>");
+
+        document.write(typeof(Golf));
+        
+        document.write(Golf instanceof Auto);
+
+        document.write("<br><br>");
+
+        // Dynamisches Hinzufuegen
+        function Trainer(name) {
+            this.name = name;
+        }
+
+        var Kd = new Trainer("Klopp");
+        
+        // Dynamisches Hinzufügen von Eigenschaften
+        Kd.Vorname = "Jürgen";
+        document.write(Kd.Vorname + "<br>")
+
+        // Dynamisches Löschen von Eigenschaften
+        delete Kd.Vorname;
+        document.write(Kd.Vorname);
+
+        // With-Anweisung
+        // - Vereinfachte Schreibweise
+
+        function Spieler(name, vorname) {
+            this.name = name;
+            this.vorname = vorname;
+        }
+
+        document.write("<br><br>");
+
+        var Sp = new Spieler("Florian", "Wirtz");
+
+        with(Sp) {
+            document.write(name + "<br>");
+            document.write(vorname + "<br>");
+        }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <script>
+
+        // Array erzeugen (1)
+        var bundesliga = new Array(); // leeres Feld
+
+        // Array befüllen (1)
+        bundesliga[1] = 100;
+        bundesliga[4] = "Dortmund";
+
+        // Array ausgeben (1)
+        //document.write(bundesliga);
+        document.write(bundesliga[1]);
+        document.write(bundesliga[4]);
+
+        /****/
+        document.write("<br><br>");
+
+        // Array erzeugen (2)
+        var stadt = new Array(4); // Array mit 4 Elementen
+
+        // Array befuellen (2)
+        stadt[0] = "Berlin";
+        stadt[1] = "Muenchen";
+        stadt[2] = "Nuernberg";
+        stadt[3] = "Hamburg";
+
+        // Array ausgeben (2)
+        document.write(stadt[0]);
+        document.write(stadt[1]);
+        document.write(stadt[2]);
+        document.write(stadt[3]);
+
+        document.write("<br><br>");
+
+        // Array erzeugen & befuellen (3)
+        var Laender = ["Deutschland", "Polen", "Italien", "Frankfreich"];
+
+        // Array ausgeben (3)
+        document.write(Laender[0]);
+        document.write(Laender[1]);
+        document.write(Laender[2]);
+        document.write(Laender[3]);
+
+        document.write("<br><br>");
+
+        // Assoziative Arrays (4)
+        var Stadt = new Array();
+
+        // Felder befuellen (4)
+        Stadt["Wohnort"] = "Burghausen";
+        Stadt["Name"] = "Max Mustermann";
+
+        // Ausgabe (4)
+        document.write(Stadt["Wohnort"]);
+        document.write(Stadt["Name"]);
+
+        // ODER
+
+        var Wohnort = Stadt["Wohnort"];
+        var Name = Stadt["Name"];
+
+        document.write(Wohnort);
+        document.write(Name);
+
+        document.write("<br><br>");
+
+        // Array Methods
+
+        // length
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        let size = fruits.length;
+        document.write(size);
+
+
+        document.write("<br><br>");
+
+        // toString()
+        let string = fruits.toString();
+        document.write(string);
+
+        document.write("<br><br>");
+
+        // join()
+        let join = fruits.join(" ; ");
+        document.write(join);
+
+        document.write("<br><br>");
+
+
+        // pop() 
+        let pop = fruits.pop()
+        document.write(pop);
+
+        document.write("<br><br>");
+
+        // push()
+        let push = fruits.push("Kiwi");
+        document.write(push);
+
+        document.write("<br><br>");
+
+        // Mango wurde durch Kiwi ersetzt
+        document.write(fruits);
+
+        document.write("<br><br>");
+
+        // concat()
+        const myGirls = ["Laura", "Lili"];
+        const myBoys = ["Peter", "Hans", "Jürgen"];
+
+        // Ausgabe
+        const myFriends = myGirls.concat(myBoys);
+        document.write(myFriends);
+
+        document.write("<br><br>");
+
+        // slice()
+        const fruitsNew = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+        const citrus = fruitsNew.slice(2);
+        document.write(citrus);
+
+        document.write("<br><br>");
+
+        // reverse() 
+        const reversedArray = fruitsNew.reverse();
+        document.write(reversedArray)
+
+
+
+        // Übung: FizzBuzz mit Arrays
+
+        // "Fizz" ausgibt, wenn die Zahl durch 3 teilbar ist,
+        // "Buzz" ausgibt, wenn die Zahl durch 5 teilbar ist,
+        // "FizzBuzz" ausgibt, wenn die Zahl sowohl durch 3 als auch durch 5 teilbar ist,
+        // die Zahl selbst ausgibt, wenn keine der obigen Bedingungen erfüllt ist.
+
+
+        // 1. Erstelle ein Array mit den Zahlen von 1 bis 20 (mit Schleife)
+        let Zahlen = [];
+        for(let i = 1; i <= 20; i++) {
+            Zahlen.push(i);
+        }
+
+        // 2. Verwende eien Schleife, um durch das Array zu iterieren
+        for(let i = 0; i < Zahlen.length; i++) {
+
+            // 3. Verwende If-Abfragen, um zu überprüfen, ob eine Zahl durch 3, 5 oder beides teilbar ist
+            if(Zahlen[i] % 3 === 0 && Zahlen[i] % 5 === 0) {
+                console.log("FizzBuzz");
+            } else if(Zahlen[i] % 3 === 0) {
+                console.log("Fizz");
+            } else if(Zahlen[i] % 5 === 0) {
+                console.log("Buzz");
+            } else {
+                // 4. Gib das entsprechende Ergebnis für jede Zahl in der Konsole aus
+                console.log(Zahlen[i]);
+            }
+        }
+
+
+
+
+        // Übung: Einfache Statistik
+
+        // Folgendes gilt herauszufinden:
+
+        // 1. Die maximale Zahl
+        // 2. Die minimale Zahl
+        // 3. Die Anzahl der geraden Zahlen
+        // 4. Die Anzahl der ungeraden Zahlen
+
+        // 1. Erstelle ein Array mit einer Liste von Zahlen
+        let zahlen = [3, 7, 2, 8, 5, 10, 1, 4, 6, 9];
+         
+        let maxZahl = zahlen[0];
+        let minZahl = zahlen[0];
+        let anzahlGerade = 0;
+        let anzahlUngerade = 0;
+
+        for(let i = 0; i < zahlen.length; i++) {
+            if(zahlen[i] > maxZahl) {
+                maxZahl = zahlen[i];
+            }
+
+            if(zahlen[i] < minZahl) {
+                minZahl = zahlen[i];
+            }
+
+            if(zahlen[i] % 2 === 0) {
+                anzahlGerade++;
+            } else {
+                anzahlUngerade++;
+            }
+        }
+
+        console.log("Maximale Zahl: " + maxZahl);
+        console.log("Minimale Zahl: " + minZahl);
+        console.log("Anzahl der geraden Zahlen: " + anzahlGerade);
+        console.log("Anzahl der ungeraden Zahlen: "  + anzahlUngerade);
+
+
+
+
+    </script>
+</body>
+</html>

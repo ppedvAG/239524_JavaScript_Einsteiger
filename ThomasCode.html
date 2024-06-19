@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		@keyframes color {
+			from {
+				filter: hue-rotate(0deg)
+			}
+			to {
+				filter: hue-rotate(360deg);
+			}
+		}
+		body {
+			user-select: none;
+			background-color: teal;
+			animation-name: color;
+			animation-duration: 5s;
+			animation-iteration-count: infinite;
+		}
+
+		.container {
+			background-color: aliceblue;
+			border: solid 1px gray;
+			border-radius: 10px;
+			width: 500px;
+			text-align: center;
+			position: absolute;
+			top: 100px;
+			left: 50%;
+			transform: translate(-50%);
+			font-family: Comic Sans MS;
+		}
+
+		.todoText {
+			word-break: break-all;
+		}
+
+		.tabelle {
+			display: flex;
+			flex-direction: row;
+		}
+
+		.tabelle > div {
+			flex: 1;
+			margin: 3px;
+			border-radius: 10px;
+			border: solid 1px gray;
+			padding: 5px;
+			text-align: left;
+		}
+
+		h2 {
+			text-align: center;
+		}
+
+		input {
+			padding: 5px;
+			font-size: 20px;
+			border-radius: 10px;
+			border: none;
+			background-color: lightblue;
+		}
+
+		button {
+			font-size: 20px;
+			padding: 5px;
+			background-color: teal;
+			border: none;
+			border-radius: 10px;
+			color: #fff;
+		}
+
+		button:hover {
+			cursor: pointer;
+			transform: scale(1.2);
+		}
+
+		.link {
+			color: red;
+		}
+
+		.link:hover {
+			cursor: pointer;
+		}
+
+		.erledigtContainer {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Todo App</h1>
+		<input id="newTodo" placeholder="neues Todo" type="text" />
+		<button onclick="addTask()">Hinzufügen</button>
+		<hr />
+		<div class="tabelle">
+			<div>
+				<h2>Ausstehend</h2>
+				<ul id="todo"></ul>
+			</div>
+			<div>
+				<h2>Erledigt</h2>
+				<ul id="fertig"></ul>
+			</div>
+		</div>
+
+		<script>
+			function fertig(e) {
+				const element = e.parentNode.parentNode.parentNode;
+				const fertig = element.cloneNode(true);
+				fertig.getElementsByClassName("todoContainer")[0].style.display = "none";
+				fertig.getElementsByClassName("erledigtContainer")[0].style.display = "initial";
+
+				document.getElementById("fertig").appendChild(fertig);
+				element.remove();
+			}
+
+			function todo(e) {
+				const element = e.parentNode.parentNode.parentNode;
+				const todo = element.cloneNode(true);
+				todo.getElementsByClassName("todoContainer")[0].style.display = "initial";
+				todo.getElementsByClassName("erledigtContainer")[0].style.display = "none";
+
+				document.getElementById("todo").appendChild(todo);
+				element.remove();
+			}
+
+			function addTask() {
+				const text = document.getElementById("newTodo");
+				if (text.value.length > 0) {
+					// Random Datum generieren
+					const randomAblauf = Math.floor(Math.random() * 7) + 1;
+					const ablauf = new Date(Date.now());
+					ablauf.setDate(ablauf.getDate() + randomAblauf);
+
+					// Element erstellen
+					const newTodo = document.createElement("li");
+					newTodo.innerHTML = `
+					<div>
+						<b class="todoText">${text.value}</b><br/>
+						<div class="todoContainer">
+							<span>am ${ablauf.toLocaleDateString()}</span>
+							<span class="link" onclick="fertig(this)">Fertig</span>
+						</div>
+						<div class="erledigtContainer">
+							<span class="link" onclick="todo(this)">Erledigt</span>
+						</div>
+					</div>`;
+
+					// zu Document hinzufügen
+					document.getElementById("todo").appendChild(newTodo);
+
+					text.value = "";
+				}
+			}
+		</script>
+	</div>
+</body>
+
+</html>

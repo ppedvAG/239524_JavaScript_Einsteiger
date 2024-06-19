@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funktionen</title>
+</head>
+<body>
+    
+    <script>
+
+        let zahl1 = 10;
+        let zahl2 = 20;
+
+        function Addition(nummer, nummer2) {
+            return nummer + nummer2;
+        }
+
+        console.log(Addition(zahl1, zahl2));
+
+
+
+        /////////////////////////////////////////////
+        var preis_netto = 125.00;
+
+        function bruttoRechner(netto) {
+            var brutto = netto * 1.19;
+            return brutto;
+        }
+
+        var preis_brutto = bruttoRechner(preis_netto);
+        document.write(preis_brutto + " Euro");
+
+
+        // If-Anweisung
+        if(10 < 20) {
+            console.log("10 ist kleiner als 20");
+        }
+
+        // If-else Anweisung
+        if(10 > 20) {
+            console.log("10 ist größer als 20");
+        } else {
+            console.log("Fehler!");
+        }
+
+
+        var a = 5;
+        console.log((a == 5) ? alert("Wahr") : alert("False"));
+
+
+        // Lösung:
+        document.write("<br>");
+        // If-Anweisung
+        var zahl11 = 10;
+        var zahl12 = 20;
+
+        if(zahl11 < zahl12) {
+            document.write("Die Zahl11 ist kleiner als die Zahl12");
+        }
+        else if(zahl11 == zahl12) {
+            document.write("Beide Zahlen sind gleich groß");
+        }
+        else {
+            document.write("Die Zahl11 ist größer als die Zahl12");
+        }
+
+
+        // Switch-Case
+        document.write("<br>");
+        var fahrzeug = "Auto";
+
+        switch(fahrzeug) {
+            case "Auto":
+                document.write("Fahren!");
+                break;
+            case "Boot":
+                document.write("Schwimm!");
+                break;
+            default:
+                document.write("Geh zu Fuß!");
+                break;
+        }
+
+        document.write("<br>");
+        // For-Anweisung
+        for(var i = 0; i <= 10; i++) {
+            document.write("i: " + i + "<br>");
+        }
+
+        var TestWort = "Hallo";
+        var TestWort2 = "Welt!";
+
+        document.write(`${TestWort} ${TestWort2} Was geht ab`);
+        document.write("<br>");
+        document.write(TestWort + " " + TestWort2 + " Was geht ab");
+        document.write("<br>");
+        document.write(TestWort + " " + TestWort2 + ' Was geht ab');
+
+
+    </script>
+
+</body>
+</html>
