@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 aus 49 Zahlen</title>
+</head>
+<body>
+    <script>
+
+        // Lotto Aufgabe
+
+        // Leeres Array
+        var zahlen = [];
+
+        // Funktion für Zufallszahlen
+        function zufallszahlen(min, max) {
+            return Math.floor(Math.random() * (max - min + 1 )+ min); // Um die 49 noch reinzunehmen
+        }
+
+        // Befülle ich das Array
+        for(var i = 0; i < 6; i++) {
+            zahlen.push(zufallszahlen(1, 49));
+        }
+
+        // Ausgabe
+        document.write(zahlen);
+
+    </script>
+</body>
+</html>

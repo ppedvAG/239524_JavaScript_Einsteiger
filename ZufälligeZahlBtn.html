@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Objekt Übung</title>
+</head>
+<body>
+
+    <!--
+    Übung: Zufällige Zahlengenerierung und Quadratwurzelberechnung
+    Ziel:
+    Erstellen Sie eine HTML-Seite mit einem Button.
+    Beim Klicken auf den Button soll eine zufällige Zahl generiert werden.
+    Berechnen und zeigen Sie die Quadratwurzel dieser Zahl an. 
+    -->
+
+    <h1>Math Objekt Übung</h1>
+    <button id="generateButton">Zufallszahl generieren</button>
+    <p id="result"></p>
+
+    <script>
+        // Funktion zur Generierung einer zufälligen Zahl und Berechnung der Quadratwurzel
+        function generateRandomNumberAndSqrt() {
+            // Generiere eine zufällige Zahl zwischen 0 und 100
+            var randomNumber = Math.random() * 100;
+            
+            // Berechne die Quadratwurzel der zufälligen Zahl
+            var sqrtNumber = Math.sqrt(randomNumber);
+            
+            // Zeige das Ergebnis an
+            var resultElement = document.getElementById('result');
+            resultElement.innerHTML = `Die zufällige Zahl ist: ${randomNumber.toFixed(2)} <br> Die Quadratwurzel ist: ${sqrtNumber.toFixed(2)}`;
+        }
+
+        // Eventhandler hinzufügen
+        var button = document.getElementById('generateButton');
+        button.addEventListener('click', generateRandomNumberAndSqrt);
+    </script>
+</body>
+</html>

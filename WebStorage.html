@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage</title>
+</head>
+<body>
+    
+    <script>
+
+        // Daten speichern
+        var data_in = "Hallo Welt!"
+        localStorage.setItem("key", data_in);
+
+        // Daten auslesen
+        var data_out = localStorage.getItem("key");
+        document.write(data_out); // "Hallo Welt!"
+
+    </script>
+
+
+</body>
+</html>

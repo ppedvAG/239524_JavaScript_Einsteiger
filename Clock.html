@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<body>
+    
+    <div id="con">
+        <span id="Tag"></span>
+        <span id="S_M"></span>
+        <span id="M_Y"></span>
+    </div>
+
+    <script>
+
+        // [Tag : Uhrzeit : Feb : 2024 : Sec]
+        // Automatische Inkrementierung der Zeit: setInterval(par1, 1000);
+        const monatsName = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+        function time() {
+            const datum = new Date();
+            tag = datum.getDate().toString().padStart(2, "0");
+            stunde = datum.getHours();
+            minute = datum.getMinutes();
+            monat = monatsName[datum.getMonth()];
+            jahr = datum.getFullYear();
+            sekunde = datum.getSeconds();
+
+            document.getElementById("Tag").innerHTML = `${tag}`;
+            document.getElementById("S_M").innerHTML = `${stunde}:${minute}`;
+            document.getElementById("M_Y").innerHTML = `${monat} ${jahr} ${sekunde}`;
+        }
+
+        setInterval(time, 1000);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    
+    <p id="async"></p>
+
+    <script>
+
+        function meinBildschirm(etwas) {
+            document.getElementById("async").innerHTML = etwas;
+        }
+
+        async function meineFunktion() {
+            return "Hello";
+        }
+
+
+
+        // Ruft unsere asynchronen Zeilen auf der Funktion "meineFunktion"
+        // .then(): Da meineFunktion ein Promise zurückgibt, verwenden wir .then damit wir das Promise verarbeiten können
+        meineFunktion().then(
+            function(wert) {
+                meinBildschirm(wert);
+            }
+        )
+        .catch(
+            function(error) {
+            meinBildschirm(error);
+        })
+
+    </script>
+
+</body>
+</html>

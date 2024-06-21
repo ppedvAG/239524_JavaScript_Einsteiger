@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="output"></p>
+    <script>
+
+        // Übung: Datenverarbeitung mit Verzögerung
+        // Erstelle eine Funktion processData, die eine Verzögerung simuliert, bevor sie Daten verarbeitet und anzeigt. 
+        // Verwende async und await, um die Verzögerung und Datenverarbeitung zu handhaben.
+
+        // Schritt-für-Schritt-Anleitung:
+        // Erstelle eine Funktion wait, die ein Promise zurückgibt, das nach einer bestimmten Zeit aufgelöst wird.
+        // Erstelle die Funktion processData, die wait verwendet, um eine Verzögerung zu simulieren, bevor sie Daten verarbeitet.
+        // Zeige das Ergebnis auf der Webseite an.
+
+
+        // Funktion, die ein Promise zurückgibt, das nach einer bestimmten Zeit aufgelöst wird
+        function wait(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        // Asynchrone Funktion, die Daten verarbeitet
+        async function processData() {
+            // Simuliere eine Verzögerung von 2 Sekunden
+            await wait(2000);
+
+            // Daten, die nach der Verzögerung verarbeitet werden
+            let data = "Daten wurden verarbeitet!";
+
+            // Zeige die Daten im HTML-Element mit der ID 'output' an
+            document.getElementById("output").innerText = data;
+        }
+
+        // Rufe die Funktion processData auf
+        processData();
+    </script>
+</body>
+</html>

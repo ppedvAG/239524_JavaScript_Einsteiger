@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Objekt Übung</title>
+</head>
+<body>
+
+    <!-- 
+    Übung: String-Manipulation
+    Ziel:
+    - Erstellen Sie eine HTML-Seite mit einem Eingabefeld und mehreren Buttons.
+    - Die Buttons sollen verschiedene String-Manipulationen durchführen, wie z.B. Umwandlung in Großbuchstaben, 
+      Umkehrung des Strings und Zählen der Anzahl von Zeichen. 
+    -->
+
+    <h1>String Manipulation</h1>
+    <label for="inputString">Geben Sie einen String ein:</label>
+    <input type="text" id="inputString">
+    
+    <button id="toUpperCaseButton">In Großbuchstaben umwandeln</button>
+    <button id="reverseStringButton">String umkehren</button>
+    <button id="countCharactersButton">Anzahl der Zeichen zählen</button>
+    
+    <p id="result"></p>
+
+    <script>
+        // Funktion zur Umwandlung des Strings in Großbuchstaben
+        function toUpperCase() {
+            var input = document.getElementById('inputString').value;
+            var result = input.toUpperCase();
+            document.getElementById('result').innerHTML = `Großbuchstaben: ${result}`;
+        }
+
+        // Funktion zur Umkehrung des Strings
+        function reverseString() {
+            var input = document.getElementById('inputString').value;
+            var result = input.split('').reverse().join('');
+            document.getElementById('result').innerHTML = `Umgekehrter String: ${result}`;
+        }
+
+        // Funktion zur Zählung der Zeichen im String
+        function countCharacters() {
+            var input = document.getElementById('inputString').value;
+            var result = input.length;
+            document.getElementById('result').innerHTML = `Anzahl der Zeichen: ${result}`;
+        }
+
+        // Eventhandler hinzufügen
+        document.getElementById('toUpperCaseButton').addEventListener('click', toUpperCase);
+        document.getElementById('reverseStringButton').addEventListener('click', reverseString);
+        document.getElementById('countCharactersButton').addEventListener('click', countCharacters);
+    </script>
+</body>
+</html>

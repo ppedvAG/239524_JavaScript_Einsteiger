@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Await</title>
+</head>
+<body>
+    
+    <p id="await"></p>
+
+    <script>
+
+        async function meinBildschirm() {
+            let meinVersprechen = new Promise(function(Aufloesung, Ablehnung) {
+                Aufloesung("Kuck kuck!!");
+            })
+
+            // Hier wird ein neues Promise erstellt und der Variablen meinVersprechen zugewiesen
+            // Das Promise nimmt zwei Funktionen als Parameter: Aufloesung (resolve) und Ablehnung (reject)
+            // Innerhalb des Promises wird die Funktion "Aufloesung" aufgerufen mit dem Wert "Kuck kuck!!"
+            // d.h wenn das Promise erfolgreich ausgeführt wird => "Kuck kuck!!"
+
+            document.getElementById("await").innerHTML = await meinVersprechen;
+        }
+        meinBildschirm();
+
+
+        // Übung: Datenverarbeitung mit Verzögerung
+        // Erstelle eine Funktion processData, die eine Verzögerung simuliert, bevor sie Daten verarbeitet und anzeigt. 
+        // Verwende async und await, um die Verzögerung und Datenverarbeitung zu handhaben.
+
+        
+
+    </script>
+</body>
+</html>

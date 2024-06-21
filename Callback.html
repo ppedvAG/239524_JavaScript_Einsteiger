@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+<body>
+    <p id="loesung"></p>
+
+    <script>
+
+        // Übungsaufgabe: Einfache Berechnung und Anzeige
+        // Erstelle eine Funktion calculateAndDisplay, die die Funktionen myCalculator und myDisplayer verwendet, 
+        // um zwei Zahlen zu addieren und das Ergebnis auf der Webseite anzuzeigen.
+
+       // Funktion, die das Ergebnis in einem bestimmten Element anzeigt
+        function Anzeigen(etwas) {
+            document.getElementById("loesung").innerHTML = etwas;
+        }
+
+        // Funktion, die zwei Zahlen addiert und das Ergebnis zurückgibt
+        function Addition(zahl1, zahl2) {
+            let sum = zahl1 + zahl2;
+            return sum;
+        }
+
+        // Übungsaufgabe: Funktion, die myCalculator und myDisplayer verwendet
+        function AddierenUndAnzeigen() {
+            let ergebnis = Addition(5, 5);
+            Anzeigen(ergebnis);
+        }
+
+        // Aufruf der Übungsaufgabe
+        AddierenUndAnzeigen();
+
+    </script>
+</body>
+</html>

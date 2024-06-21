@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zahlen raten Spiel</title>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <h1>Zahlen raten Spiel</h1>
+    <p>Gib eine Zahl zwischen 0 und 10 ein:</p>
+    <input type="number" id="guessInput" min="0" max="10">
+    <button onclick="makeGuess()">Raten</button>
+    <p id="message"></p>
+
+    <script>
+        let randomNumber = Math.floor(Math.random() * 11);
+        let attempts = 0;
+
+        function makeGuess() {
+            const guessInput = document.getElementById('guessInput');
+            const message = document.getElementById('message');
+            const userGuess = parseInt(guessInput.value);
+
+            if (isNaN(userGuess) || userGuess < 0 || userGuess > 10) {
+                message.textContent = "Bitte gib eine Zahl zwischen 0 und 10 ein.";
+                return;
+            }
+
+            attempts++;
+
+            if (userGuess === randomNumber) {
+                alert(`Herzlichen Glückwunsch! Du hast die richtige Zahl ${randomNumber} nach ${attempts} Versuchen erraten.`);
+                resetGame();
+            } else {
+                message.textContent = "Falsch geraten, versuche es erneut!";
+            }
+        }
+
+        function resetGame() {
+            randomNumber = Math.floor(Math.random() * 11);
+            attempts = 0;
+            document.getElementById('guessInput').value = '';
+            document.getElementById('message').textContent = '';
+        }
+
+
+    </script>
+</body>
+</html>

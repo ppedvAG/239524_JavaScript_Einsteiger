@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+<body>
+    
+    <p id="callback"></p>
+    <p id="loesung"></p>
+
+    <script>
+
+        function meineFunktion(wert) {
+            document.getElementById("callback").innerHTML = wert;
+        }
+
+        setTimeout(function() {
+            meineFunktion("Kuck kuck!!!");
+        }, 3000)
+
+
+        // Übungsaufgabe: Einfache Berechnung und Anzeige
+        // Erstelle eine Funktion "AddierenUndAnzeigen", die die Funktionen "Addieren" und "Anzeigen" verwendet, 
+        // um zwei Zahlen zu addieren und das Ergebnis auf der Webseite anzuzeigen.
+
+        // Funktion, die das Ergebnis mir anzeigt
+        function Anzeigen(etwas) {
+            document.getElementById("loesung").innerHTML = etwas;
+        }
+
+        // Funktion für die Berechnung
+        function Additition(zahl1, zahl2) {
+            let sum = zahl1 + zahl2;
+            return sum;
+        }
+
+        // Funktion AnzeigenUndAddieren
+        function AnzeigenUndAddieren() {
+            let ergebnis = Additition(5, 5);
+            Anzeigen(ergebnis);
+        }
+
+        // Funktion Aufruf
+        AnzeigenUndAddieren();
+
+
+    </script>
+
+</body>
+</html>

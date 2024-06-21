@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eigene Attribute in JavaScript</title>
+</head>
+<body>
+    <div id="meinElement" data-mein-attribut="Wert123">Inhalt des Divs</div>
+
+
+
+    <script>
+        // Element mit dem eigenen Attribut auswählen
+        const element = document.getElementById('meinElement');
+
+        // Das eigene Attribut auslesen
+        const meinAttributWert = element.getAttribute('data-mein-attribut');
+        console.log('Der Wert des eigenen Attributs ist:', meinAttributWert);
+
+        // Ein eigenes Attribut setzen
+        element.setAttribute('data-neues-attribut', 'NeuerWert');
+
+        // Das neu gesetzte Attribut auslesen und anzeigen
+        const neuesAttributWert = element.getAttribute('data-neues-attribut');
+        console.log('Der Wert des neuen eigenen Attributs ist:', neuesAttributWert);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler</title>
+</head>
+<body>
+
+    <button id="demo">Klick mich!</button>
+
+    <p id="text"></p>
+
+    <script>
+        
+        function HelloWorld() {
+            alert("Hallo Welt!");
+        }
+
+        document.getElementById("demo").addEventListener("click", HelloWorld);
+
+
+        var x = document.getElementById("demo");
+        x.addEventListener("mouseover", Drueber);
+        x.addEventListener("mouseout", Raus);
+
+        function Drueber() {
+            document.getElementById("text").innerHTML += "Maus drüber!<br>";
+        }
+
+        function Raus() {
+            document.getElementById("text").innerHTML += "Maus raus!<br>";
+        }
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vordefinierte Objekte</title>
+</head>
+<body>
+    <script>
+
+        const d = new Date("2024-12-24");
+        document.write(d + "<br>");
+
+        // getDate()
+        document.write(d.getDate() + "<br>");
+
+        // getDay()
+        document.write(d.getDay() + "<br>");
+
+        // getHours()
+        document.write(d.getHours() + "<br>");
+
+        // getMinutes()
+        document.write(d.getMinutes() + "<br>");
+
+        // getMonth()
+        document.write(d.getMonth() + "<br>");
+
+
+    </script>
+
+    <p id="year"></p>
+
+    <script>
+        const set = new Date();
+        set.setFullYear(2020);
+        document.getElementById("year").innerHTML = set;
+    </script>
+
+</body>
+</html>
